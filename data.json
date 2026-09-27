@@ -1,6 +1,22 @@
-{
-    "Name": "Fiza",
-    "age" : 134,
-    "id":4782,
-    "Course" : "Moderen Web & App"
-}
+[
+    {
+        "Name": "Fiza",
+        "age": 134,
+        "id": 4782,
+        "Course": "Modern Web & App"
+    },
+
+    {
+        "Name": "Fiza",
+        "age": 134,
+        "id": 4782,
+        "Course": "Modern Web & App"
+    },
+
+    {
+        "Name": "Fiza",
+        "age": 134,
+        "id": 4782,
+        "Course": "Modern Web & App"
+    }
+]
