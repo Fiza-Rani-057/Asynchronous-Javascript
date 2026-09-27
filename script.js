@@ -193,13 +193,31 @@ let variablename = new Promise((resolve, reject) => {
     // JS ka built in function ha jo server se data leny k lye use hota ha
     // jb fetch se request bjty hen tu promise return krta ha 
     // JSON ki form me response bjsakta ha server
-    async function getData() {
-    let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
-    let data = await response.json();
-    console.log(data);
-}
-getData();
+//     async function getData() {
+//     let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+//     let data = await response.json();
+//     console.log(data);
+// }
+fetch("https://jsonplaceholder.typicode.com/users/1")
+ .then(res=>{
+    return res.json();
+ })
+ .then(data=>{
+    console.log(data)
+ })
+ .catch(error=>{
+    console.log(error)
+ })
 
-//  what is json ???
-
+//  What is json ???
 //  json data likny ka ak method ha 
+
+
+//  Ternary operator ?:
+let age = 20;
+let result = age >= 18 ? "Adult" : "Not Adult";
+console.log(result);
+
+ let name = "Fiza";
+ let print = name === "Fiza" ? "Valid name" : "Not Valid";
+ alert(print);
