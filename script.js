@@ -19,3 +19,14 @@
  setTimeout(()=>{
     console.log("everyone");
  }, 4000);
+
+//  Event Loop 
+
+// Event Loop aik aisa loop (mechanism) hai jo continuous chalta rehta hai 
+// aur check karta hai ke agar Call Stack (main engine) khali hai, toh woh 
+// Callback Queue se waiting tasks ko utha kar run kar deta hai,
+//  taake heavy tasks ke doran program freeze na ho
+ console.log(3);
+ setTimeout(()=>{
+    console.log(2)
+ },0)
