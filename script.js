@@ -135,3 +135,56 @@ let promise = new Promise(function(resolve, reject) {
     .catch(function(error) {
         console.log(error);
     });
+
+    //====================== asyn ================
+    // kic function k start me async ajay tu wo asynchronous bnjata ha 
+    // async se start hony wala function hmesah ak promise return krta ha 
+    // async se start hony waly function me agr koi b value return karen ga 
+    // tu JS us value ko promise k andar wrap kr dega
+    
+    async function student() {
+        return "hello";
+    }
+    let result  = student();
+    console.log(result);
+
+  async function calc(a , b){
+    return  a + b;
+  }
+
+   let result2 = calc(2 , 3);
+   console.log(result2);
+    // ====================== await ==================
+
+    // await ka use promise k result ka wait krny k lye kia jata ha 
+    // function k excecution ko us point pr pause krta ha jb tk function
+    //  execute nhi hojata ha 
+    // bager async k kam nhi krta ha 
+
+    async function helloFun(){
+   await new Promise(resolve =>{
+      setTimeout(resolve , 5000)
+    })
+    return "hello";
+
+    }
+
+    async function test(){
+        let result = await helloFun();
+           console.log(result);
+    }
+  
+     test();
+
+    async function message(){
+        await new Promise(resolve =>{
+          setTimeout(resolve , 8000)
+        })
+        return "Hello world"
+    }
+
+    async function messageResult(){
+        let result3 = await message();
+        alert(result3);
+    }
+    messageResult();
