@@ -78,7 +78,7 @@ let variablename = new Promise((resolve, reject) => {
 
 
 let students = new Promise((resolve, reject) => {
-    let success = true;
+    let success = false;
     if(success){
         resolve("Successful");
     }
@@ -101,3 +101,5 @@ students.then((result)=>{
 //  then: jb promise fulfilled hoga
 // catch: jb promise reject hoga 
 // finally: successful ho ya na hu finally chly ga 
+
+
