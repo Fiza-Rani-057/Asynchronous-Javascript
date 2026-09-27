@@ -66,125 +66,140 @@ let variablename = new Promise((resolve, reject) => {
 // 3.rejected
 
 
-//  resolve , reject
+// //  resolve , reject
 
-//  Javascript k callback function hen
+// //  Javascript k callback function hen
 
-// resolve
-// tb chlya ga jb operation successful hoga
+// // resolve
+// // tb chlya ga jb operation successful hoga
 
-// reject
-// tb chly ga jb operation reject hoga 
-
-
-let students = new Promise((resolve, reject) => {
-    let success = false;
-    if(success){
-        resolve("Successful");
-    }
-
-    else{
-        reject("Not Succeed");
-    }
-});
-
-students.then((result)=>{
-    console.log(result);
-}).catch((error)=>{
-    console.log(error);
-}).finally(()=>{
-    console.log('done');
-});
-
-//  ==================== Promise result ====================
-
-//  then: jb promise fulfilled hoga
-// catch: jb promise reject hoga 
-// finally: successful ho ya na hu finally chly ga 
+// // reject
+// // tb chly ga jb operation reject hoga 
 
 
-// Promise Chaining 
+// let students = new Promise((resolve, reject) => {
+//     let success = false;
+//     if(success){
+//         resolve("Successful");
+//     }
 
-// Promise chaining aik aisi technique hai jahan hum aik ke baad aik 
-// asynchronous tasks ko ek  sequence (line) mein chalate hain.
+//     else{
+//         reject("Not Succeed");
+//     }
+// });
 
-let promise = new Promise(function(resolve, reject) {
+// students.then((result)=>{
+//     console.log(result);
+// }).catch((error)=>{
+//     console.log(error);
+// }).finally(()=>{
+//     console.log('done');
+// });
 
-    let age = 20;
+// //  ==================== Promise result ====================
 
-    if (age >= 18) {
-        resolve("Success");
-    } else {
-        reject("Failed");
-    }
-
-});
+// //  then: jb promise fulfilled hoga
+// // catch: jb promise reject hoga 
+// // finally: successful ho ya na hu finally chly ga 
 
 
-    promise.then(function(message) {
-        console.log(message); // Step 1
-        return "Step 1 complete";
-    })
-    .then(function(message) {
-        console.log(message); // Step 2
-        return "Step 2 complete";
-    })
-    .then(function(message) {
-        console.log(message); // Step 3
-    })
-    .catch(function(error) {
-        console.log(error);
-    });
+// // Promise Chaining 
 
-    //====================== asyn ================
-    // kic function k start me async ajay tu wo asynchronous bnjata ha 
-    // async se start hony wala function hmesah ak promise return krta ha 
-    // async se start hony waly function me agr koi b value return karen ga 
-    // tu JS us value ko promise k andar wrap kr dega
+// // Promise chaining aik aisi technique hai jahan hum aik ke baad aik 
+// // asynchronous tasks ko ek  sequence (line) mein chalate hain.
+
+// let promise = new Promise(function(resolve, reject) {
+
+//     let age = 20;
+
+//     if (age >= 18) {
+//         resolve("Success");
+//     } else {
+//         reject("Failed");
+//     }
+
+// });
+
+
+//     promise.then(function(message) {
+//         console.log(message); // Step 1
+//         return "Step 1 complete";
+//     })
+//     .then(function(message) {
+//         console.log(message); // Step 2
+//         return "Step 2 complete";
+//     })
+//     .then(function(message) {
+//         console.log(message); // Step 3
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//     });
+
+//     //====================== asyn ================
+//     // kic function k start me async ajay tu wo asynchronous bnjata ha 
+//     // async se start hony wala function hmesah ak promise return krta ha 
+//     // async se start hony waly function me agr koi b value return karen ga 
+//     // tu JS us value ko promise k andar wrap kr dega
     
-    async function student() {
-        return "hello";
-    }
-    let result  = student();
-    console.log(result);
+//     async function student() {
+//         return "hello";
+//     }
+//     let result  = student();
+//     console.log(result);
 
-  async function calc(a , b){
-    return  a + b;
-  }
+//   async function calc(a , b){
+//     return  a + b;
+//   }
 
-   let result2 = calc(2 , 3);
-   console.log(result2);
-    // ====================== await ==================
+//    let result2 = calc(2 , 3);
+//    console.log(result2);
+//     // ====================== await ==================
 
-    // await ka use promise k result ka wait krny k lye kia jata ha 
-    // function k excecution ko us point pr pause krta ha jb tk function
-    //  execute nhi hojata ha 
-    // bager async k kam nhi krta ha 
+//     // await ka use promise k result ka wait krny k lye kia jata ha 
+//     // function k excecution ko us point pr pause krta ha jb tk function
+//     //  execute nhi hojata ha 
+//     // bager async k kam nhi krta ha 
 
-    async function helloFun(){
-   await new Promise(resolve =>{
-      setTimeout(resolve , 5000)
-    })
-    return "hello";
+//     async function helloFun(){
+//    await new Promise(resolve =>{
+//       setTimeout(resolve , 5000)
+//     })
+//     return "hello";
 
-    }
+//     }
 
-    async function test(){
-        let result = await helloFun();
-           console.log(result);
-    }
+//     async function test(){
+//         let result = await helloFun();
+//            console.log(result);
+//     }
   
-     test();
+//      test();
 
-    async function message(){
-        await new Promise(resolve =>{
-          setTimeout(resolve , 8000)
-        })
-        return "Hello world"
-    }
+//     async function message(){
+//         await new Promise(resolve =>{
+//           setTimeout(resolve , 8000)
+//         })
+//         return "Hello world"
+//     }
 
-    async function messageResult(){
-        let result3 = await message();
-        alert(result3);
-    }
-    messageResult();
+//     async function messageResult(){
+//         let result3 = await message();
+//         alert(result3);
+//     }
+//     messageResult();
+
+    // Fetch 
+    // JS ka built in function ha jo server se data leny k lye use hota ha
+    // jb fetch se request bjty hen tu promise return krta ha 
+    // JSON ki form me response bjsakta ha server
+    async function getData() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    let data = await response.json();
+    console.log(data);
+}
+getData();
+
+//  what is json ???
+
+//  json data likny ka ak method ha 
