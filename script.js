@@ -103,3 +103,35 @@ students.then((result)=>{
 // finally: successful ho ya na hu finally chly ga 
 
 
+// Promise Chaining 
+
+// Promise chaining aik aisi technique hai jahan hum aik ke baad aik 
+// asynchronous tasks ko ek  sequence (line) mein chalate hain.
+
+let promise = new Promise(function(resolve, reject) {
+
+    let age = 20;
+
+    if (age >= 18) {
+        resolve("Success");
+    } else {
+        reject("Failed");
+    }
+
+});
+
+
+    promise.then(function(message) {
+        console.log(message); // Step 1
+        return "Step 1 complete";
+    })
+    .then(function(message) {
+        console.log(message); // Step 2
+        return "Step 2 complete";
+    })
+    .then(function(message) {
+        console.log(message); // Step 3
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
