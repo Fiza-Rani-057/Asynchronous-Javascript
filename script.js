@@ -29,4 +29,20 @@
  console.log(3);
  setTimeout(()=>{
     console.log(2)
- },0)
+ },0);
+
+
+ function callMe(a , b){
+   console.log(a + b);
+ }
+
+ function caller(sum){
+ sum(2 , 3);
+ }
+ caller(callMe);
+
+
+let caller2 = ()=>{
+  console.log("This is my last code");
+}
+setTimeout(caller2 , 4000);
